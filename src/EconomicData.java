@@ -1,16 +1,16 @@
 public class EconomicData {
     private String state;
-    private int year;
-    private int personalIncome;
-    private int population;
-    private int perCapitaPersonalIncome;
+    private String Description;  // Changed to String
+    private String personalIncome;  // Changed to String
+    private String population;  // Changed to String
+    private String perCapitaPersonalIncome;  // Changed to String
 
-    public EconomicData(String state, int year, int personalIncome, int population, int perCapitaPersonalIncome) {
+    public EconomicData(String state, String year, String personalIncome, String population, String perCapitaPersonalIncome) {
         this.state = state;
-        this.year = year;
+        this.Description = year;
         this.personalIncome = personalIncome;
         this.population = population;
-        this.perCapitaPersonalIncome = 0;
+        this.perCapitaPersonalIncome = perCapitaPersonalIncome;
     }
 
     public String getState() {
@@ -21,35 +21,36 @@ public class EconomicData {
         this.state = state;
     }
 
-    public int getYear() {
-        return year;
+    public String getDescription() {
+        return Description;
     }
 
-    public void setYear(int year) {
-        this.year = year;
+    public void setDescription(String description) {
+        this.Description = description;
     }
 
-    public int getPersonalIncome() {
+    public String getPersonalIncome() {
         return personalIncome;
     }
 
-    public void setPersonalIncome(int personalIncome) {
+    public void setPersonalIncome(String personalIncome) {
         this.personalIncome = personalIncome;
     }
 
-    public int getPopulation() {
+    public String getPopulation() {
         return population;
     }
 
-    public void setPopulation(int population) {
+    public void setPopulation(String population) {
         this.population = population;
     }
 
-    public int getPerCapitaPersonalIncome() {
+    public String getPerCapitaPersonalIncome() {
         return perCapitaPersonalIncome;
     }
 
-    public void setPerCapitaPersonalIncome(int perCapitaPersonalIncome) {
+    public void setPerCapitaPersonalIncome(String perCapitaPersonalIncome) {
         this.perCapitaPersonalIncome = perCapitaPersonalIncome;
     }
 }
+
