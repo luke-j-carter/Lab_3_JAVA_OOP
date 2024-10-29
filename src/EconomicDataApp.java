@@ -1,5 +1,6 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.io.IOException;
 import java.util.List;
@@ -28,6 +29,10 @@ public class EconomicDataApp {
         table = new JTable(model);
         updateTableData();
 
+        // Create a TableRowSorter and set it on the table
+        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
+        table.setRowSorter(sorter);
+
         table.getSelectionModel().addListSelectionListener(e -> {
             int selectedRow = table.getSelectedRow();
             if (selectedRow >= 0) {
@@ -53,7 +58,13 @@ public class EconomicDataApp {
         DefaultTableModel model = (DefaultTableModel) table.getModel();
         model.setRowCount(0); // Clear existing data
         for (EconomicData data : economicDataList) {
-            model.addRow(new Object[]{data.getState(), data.getDescription(), data.getPersonalIncome(), data.getPopulation(), data.getPerCapitaPersonalIncome()});
+            model.addRow(new Object[]{
+                    data.getState(),
+                    data.getDescription(),
+                    data.getPersonalIncome(),
+                    data.getPopulation(),
+                    data.getPerCapitaPersonalIncome()
+            });
         }
     }
 
@@ -66,6 +77,6 @@ public class EconomicDataApp {
             e.printStackTrace();
         }
     }
-
 }
+
 
